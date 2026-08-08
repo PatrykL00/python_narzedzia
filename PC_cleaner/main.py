@@ -4,9 +4,6 @@ import shutil
 import argparse
 import typer
 
-parser = argparse.ArgumentParser()
-parser.add_argument("--sciezka", required=True)
-args = parser.parse_args()
 def index(sciezka: str) -> None:
     folder = Path(sciezka)
     suma = 0
@@ -67,4 +64,7 @@ def delete_data(sciezka: str)-> None:
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--sciezka", required=True)
+    args = parser.parse_args()
     index(args.sciezka)
